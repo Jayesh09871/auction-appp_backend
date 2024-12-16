@@ -20,11 +20,12 @@ config({
 
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL],
+    origin: "*",  // Temporarily allow all origins for testing
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
   })
 );
+
 
 app.use(cookieParser());
 app.use(express.json());
